@@ -1,0 +1,215 @@
+##################################
+#
+# Sway Config  --  v1.0
+#
+##################################
+
+##################################
+# Variables
+##################################
+set $mod Mod4
+
+set $term kitty
+set $browser helium-browser
+
+set $up k
+set $down j
+set $right l
+set $left h
+
+##################################
+# Autostart
+##################################
+exec swaysome init 1
+exec autotiling-rs
+exec swaymsg focus output DP-2
+
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+exec qs -c noctalia-shell
+exec swayidle -w before-sleep 'qs -c noctalia-shell ipc call lockScreen lock'
+
+exec flatpak run com.github.wwmm.easyeffects --gapplication-service
+
+seat seat0 xcursor_theme 'Bibata-Modern-Classic' 20
+
+##################################
+# Monitor
+##################################
+output * {
+	allow_tearing yes
+	max_render_time off
+}
+
+output DP-2 {
+	mode 2560x1440@240Hz position 1920 0
+	color_profile icc /usr/share/color/icc/colord/aoc_agon_pro_ag276qzd2.icm
+}
+
+output DP-3 {
+	mode 1920x1080@144Hz position 0 100
+}
+
+output eDP-1 {
+	mode 2880x1800@120Hz position 0 0 scale 1.666666666
+}
+
+##################################
+# Input
+##################################
+input type:keyboard {
+	xkb_layout us,us
+	xkb_variant alt-intl,
+	xkb_options grp:rctrl_toggle
+	repeat_rate 30
+	repeat_delay 300
+}
+
+input type:pointer {
+	accel_profile flat
+	pointer_accel 0
+}
+
+input type:touchpad {
+	accel_profile flat
+	pointer_accel 0.5
+	natural_scroll on
+	tap on
+}
+
+##################################
+# Style
+##################################
+gaps inner 5
+gaps outer 10
+default_border none
+default_floating_border none
+floating_modifier $mod normal
+
+#Useful config from gentoo wiki
+for_window [window_role = "pop-up"] floating enable
+for_window [window_role = "bubble"] floating enable
+for_window [window_role = "dialog"] floating enable
+for_window [window_type = "dialog"] floating enable
+for_window [window_role = "task-dialog"] floating enable
+for_window [window_type = "menu"] floating enable
+for_window [app_id = "floating"] floating enable
+for_window [app_id = "floating_update"] floating enable, resize set width 1000px height 600px
+for_window [class = "(?i)pinentry"] floating enable
+for_window [title = "Administrator privileges required"] floating enable
+for_window [title = "About Mozilla Firefox"] floating enable
+for_window [window_role = "About"] floating enable
+for_window [app_id = "firefox" title = "Library"] floating enable
+
+#Useful config for Steam from gentoo wiki
+for_window [class = "steam" title="Friends List"] floating enable
+for_window [class = "steam" title="Steam - News"] floating enable
+for_window [class = "steam" title="^.* - Chat$"] floating enable
+for_window [class = "steam" title="Steam Settings"] floating enable
+for_window [class = "steam" title="^.* - event started$"] floating enable
+for_window [class = "steam" title="^.* CD key$"] floating enable
+for_window [class = "steam" title="Steam - Self Updater"] floating enable
+for_window [class = "steam" title="Screenshot Uploader"] floating enable
+for_window [class = "steam" title="Steam Guard - Computer Authorization Required"] floating enable
+for_window [class = "steam" title="Steam Keyboard"] floating enable
+
+for_window [app_id = "Thunar" title="File Operation Progress"] floating enable
+for_window [app_id = "org.pulseaudio.pavucontrol"] floating enable
+
+##################################
+# Keybinds
+##################################
+set $ipc qs -c noctalia-shell ipc call
+bindswitch --locked lid:on exec systemctl suspend
+
+bindsym {
+#---Sway--# 
+    $mod+Shift+c reload
+
+#---Programs---#
+    $mod+t exec $term
+    $mod+b exec $browser
+    $mod+q kill
+    $mod+space exec $ipc launcher toggle
+    $mod+period exec $ipc launcher emoji
+    $mod+c exec $ipc launcher clipboard
+    $mod+s exec $ipc launcher command
+    $mod+i exec $ipc settings toggle
+    $mod+tab exec $ipc bar toggle
+    $mod+p exec grim -g "$(slurp)" - | tee "$(xdg-user-dir PICTURES)/$(date +%Y-%m-%d_%H-%M-%S).png" | wl-copy
+
+#---Layout---#
+    $mod+f fullscreen
+    $mod+v floating toggle
+    $mod+r mode "resize"
+
+#---Focus---#
+    $mod+$up focus up
+    $mod+$down focus down       
+    $mod+$right focus right
+    $mod+$left focus left
+    $mod+Up focus up
+    $mod+Down focus down
+    $mod+Right focus right
+    $mod+Left focus left
+
+#---Move---#
+    $mod+Shift+$up move up
+    $mod+Shift+$down move down
+    $mod+Shift+$right move right
+    $mod+Shift+$left move left
+    $mod+Shift+Up move up
+    $mod+Shift+Down move down
+    $mod+Shift+Right move right
+    $mod+Shift+Left move left
+
+#---Workspaces---#
+# Change focus between workspaces
+    $mod+1 exec "swaysome focus 1"
+    $mod+2 exec "swaysome focus 2"
+    $mod+3 exec "swaysome focus 3"
+    $mod+4 exec "swaysome focus 4"
+    $mod+5 exec "swaysome focus 5"
+    $mod+6 exec "swaysome focus 6"
+    $mod+7 exec "swaysome focus 7"
+    $mod+8 exec "swaysome focus 8"
+    $mod+9 exec "swaysome focus 9"
+    $mod+0 exec "swaysome focus 0"
+
+# Move containers between workspaces
+    $mod+Shift+1 exec "swaysome move 1"
+    $mod+Shift+2 exec "swaysome move 2"
+    $mod+Shift+3 exec "swaysome move 3"
+    $mod+Shift+4 exec "swaysome move 4"
+    $mod+Shift+5 exec "swaysome move 5"
+    $mod+Shift+6 exec "swaysome move 6"
+    $mod+Shift+7 exec "swaysome move 7"
+    $mod+Shift+8 exec "swaysome move 8"
+    $mod+Shift+9 exec "swaysome move 9"
+    $mod+Shift+0 exec "swaysome move 0"
+
+#---Media--#
+    --locked XF86AudioRaiseVolume exec $ipc volume increase
+    --locked XF86AudioLowerVolume exec $ipc volume decrease
+    --locked XF86AudioMute exec $ipc volume muteOutput
+    --locked XF86AudioPlay exec $ipc media playPause
+    --locked XF86AudioNext exec $ipc media next
+    --locked XF86AudioPrev exec $ipc media previous
+    --locked XF86MonBrightnessUp exec $ipc brightness increase
+    --locked XF86MonBrightnessDown exec $ipc brightness decrease
+}
+
+mode "resize" {
+    bindsym $up resize shrink height 10px
+    bindsym $down resize grow height 10px
+    bindsym $right resize grow width 10px
+    bindsym $left resize shrink width 10px
+    bindsym Up resize shrink height 10px
+    bindsym Down resize grow height 10px
+    bindsym Right resize grow width 10px
+    bindsym Left resize shrink width 10px
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+include /etc/sway/config.d/*
