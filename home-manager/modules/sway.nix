@@ -5,6 +5,11 @@
     home.packages = with pkgs; [
         swayidle
         pavucontrol
+        swaysome
+        autotiling-rs
+        cliphist
+        wl-clipboard
+        playerctl
     ];
 
     xdg.configFile."xdg-desktop-portal/sway-portals.conf".text = ''

@@ -6,13 +6,12 @@
     };
 
     home.packages = with pkgs; [
-        neovim
         lua-language-server
         stylua
-        tree-sitter
 
         bun
         pnpm
+        nodejs_24
         typescript
         typescript-language-server
         tailwindcss-language-server
@@ -25,5 +24,16 @@
         go
         zig
         zls
+
+        bat
+        btop
+        fastfetch
+        fzf
+        tldr
+        tokei
+        tree
+        xdg-ninja
+        zip
+        unzip
     ];
 }
