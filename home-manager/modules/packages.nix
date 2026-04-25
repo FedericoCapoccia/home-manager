@@ -1,39 +1,40 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 {
-    programs.zoxide = {
-        enable = true;
-        enableFishIntegration = true;
-    };
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration = true;
+  };
 
-    home.packages = with pkgs; [
-        lua-language-server
-        stylua
+  home.packages = with pkgs; [
+    lua-language-server
+    stylua
+    nixd
+    nixfmt
 
-        bun
-        pnpm
-        nodejs_24
-        typescript
-        typescript-language-server
-        tailwindcss-language-server
-        oxfmt
-        oxlint
+    bun
+    pnpm
+    nodejs_24
+    typescript
+    typescript-language-server
+    tailwindcss-language-server
+    oxfmt
+    oxlint
 
+    gradle
+    rustup
+    go
+    zig
+    zls
 
-        gradle
-        rustup
-        go
-        zig
-        zls
-
-        bat
-        btop
-        fastfetch
-        fzf
-        tldr
-        tokei
-        tree
-        xdg-ninja
-        zip
-        unzip
-    ];
+    bat
+    btop
+    fastfetch
+    fzf
+    tldr
+    tokei
+    tree
+    xdg-ninja
+    zip
+    unzip
+  ];
 }

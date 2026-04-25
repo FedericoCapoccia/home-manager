@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 let
   opencodeWrapper = pkgs.writeShellScriptBin "opencode" ''
-    exec "$HOME/.opencode/bin/opencode" "$@"
+    exec "${config.home.homeDirectory}/.opencode/bin/opencode" "$@"
   '';
 in
 {
@@ -13,10 +13,17 @@ in
       model = "opencode/qwen3.6-plus";
       provider = {
         github-copilot = {
-          whitelist = [ "gpt-5-mini" "gpt-5.4-mini" ];
+          whitelist = [
+            "gpt-5-mini"
+            "gpt-5.4-mini"
+          ];
         };
         openai = {
-          whitelist = [ "gpt-5.4" "gpt-5.4-mini" "gpt-5.5" ];
+          whitelist = [
+            "gpt-5.4"
+            "gpt-5.4-mini"
+            "gpt-5.5"
+          ];
         };
       };
       mcp = { };
