@@ -9,7 +9,7 @@
 ##################################
 set $mod Mod4
 
-set $term kitty
+set $term ghostty
 set $browser helium-browser
 
 set $up k

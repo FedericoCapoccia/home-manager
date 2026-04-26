@@ -11,6 +11,8 @@
 
       freetype-load-flags = "no-hinting,no-force-autohint,no-monochrome";
       alpha-blending = "linear-corrected";
+      quit-after-last-window-closed = true;
+      quit-after-last-window-closed-delay = "5m";
 
       foreground = "#e0def4";
       background = "#000000";
