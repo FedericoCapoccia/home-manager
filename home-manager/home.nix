@@ -16,5 +16,6 @@
     ./modules/sway.nix
     ./modules/theme.nix
     ./modules/kitty.nix
+    ./modules/ghostty.nix
   ];
 }

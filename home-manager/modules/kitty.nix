@@ -6,7 +6,7 @@
 
     font = {
       name = "CaskaydiaCove Nerd Font";
-      size = 13;
+      size = 14;
       package = pkgs.nerd-fonts.caskaydia-cove;
     };
 
