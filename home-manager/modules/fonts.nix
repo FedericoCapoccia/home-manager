@@ -4,7 +4,7 @@
     enable = true;
     antialiasing = true;
     hinting = "slight";
-    subpixelRendering = "rgb";
+    subpixelRendering = "none";
     defaultFonts = {
       sansSerif = [
         "Inter"

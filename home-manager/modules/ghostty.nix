@@ -9,7 +9,8 @@
       font-family = "CaskaydiaCove Nerd Font";
       font-size = 14;
 
-      freetype-load-flags = "no-hinting,no-force-autohint,no-monochrome";
+      # freetype-load-flags = "no-hinting,no-force-autohint,no-monochrome";
+      freetype-load-flags = "hinting,no-autohint,light,no-force-autohint,no-monochrome";
       alpha-blending = "linear-corrected";
       quit-after-last-window-closed = true;
       quit-after-last-window-closed-delay = "5m";
