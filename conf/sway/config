@@ -43,7 +43,7 @@ output * {
 
 output DP-2 {
 	mode 2560x1440@240Hz position 1920 0
-	color_profile icc /usr/share/color/icc/colord/aoc_agon_pro_ag276qzd2.icm
+	# color_profile icc /usr/share/color/icc/colord/aoc_agon_pro_ag276qzd2.icm
 }
 
 output DP-3 {
@@ -59,7 +59,7 @@ output eDP-1 {
 ##################################
 input type:keyboard {
 	xkb_layout us,us
-	xkb_variant alt-intl,
+	xkb_variant ,alt-intl
 	xkb_options grp:rctrl_toggle
 	repeat_rate 30
 	repeat_delay 300
@@ -143,25 +143,16 @@ bindsym {
     $mod+v floating toggle
     $mod+r mode "resize"
 
-#---Focus---#
     $mod+$up focus up
     $mod+$down focus down       
     $mod+$right focus right
     $mod+$left focus left
-    $mod+Up focus up
-    $mod+Down focus down
-    $mod+Right focus right
-    $mod+Left focus left
 
 #---Move---#
     $mod+Shift+$up move up
     $mod+Shift+$down move down
     $mod+Shift+$right move right
     $mod+Shift+$left move left
-    $mod+Shift+Up move up
-    $mod+Shift+Down move down
-    $mod+Shift+Right move right
-    $mod+Shift+Left move left
 
 #---Workspaces---#
 # Change focus between workspaces
@@ -204,12 +195,6 @@ mode "resize" {
     bindsym $down resize grow height 10px
     bindsym $right resize grow width 10px
     bindsym $left resize shrink width 10px
-    bindsym Up resize shrink height 10px
-    bindsym Down resize grow height 10px
-    bindsym Right resize grow width 10px
-    bindsym Left resize shrink width 10px
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-
-include /etc/sway/config.d/*
