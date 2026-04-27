@@ -20,6 +20,8 @@ set $left h
 ##################################
 # Autostart
 ##################################
+
+exec uwsm finalize SWAYSOCK
 exec swaysome init 1
 exec autotiling-rs
 exec swaymsg focus output DP-2
