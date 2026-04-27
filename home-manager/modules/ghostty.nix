@@ -12,6 +12,19 @@
       keybind = [
         "performable:ctrl+c=copy_to_clipboard:mixed"
         "ctrl+v=paste_from_clipboard"
+        "ctrl+shift+h=unbind"
+        "ctrl+shift+j=unbind"
+        "ctrl+shift+k=unbind"
+        "ctrl+shift+l=unbind"
+        "ctrl+shift+|=new_split:right"
+        "ctrl+shift+-=new_split:down"
+        "ctrl+alt+h=goto_split:left"
+        "ctrl+alt+j=goto_split:down"
+        "ctrl+alt+k=goto_split:up"
+        "ctrl+alt+l=goto_split:right"
+        "ctrl+shift+t=new_tab"
+        "ctrl+tab=next_tab"
+        "ctrl+shift+tab=previous_tab"
       ];
 
       # freetype-load-flags = "no-hinting,no-force-autohint,no-monochrome";
@@ -19,6 +32,9 @@
       alpha-blending = "linear-corrected";
       quit-after-last-window-closed = true;
       quit-after-last-window-closed-delay = "5m";
+      window-inherit-working-directory = false;
+      tab-inherit-working-directory = false;
+      gtk-tabs-location = "bottom";
 
       foreground = "#e0def4";
       background = "#000000";
