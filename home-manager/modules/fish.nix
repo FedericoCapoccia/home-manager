@@ -8,7 +8,6 @@
       op = "opencode attach http://localhost:42069 --dir .";
       oc = "opencode attach https://ai.fedecap.dev --dir .";
       glo = "git log --oneline";
-      ssh = "kitten ssh";
     };
 
     loginShellInit = ''
