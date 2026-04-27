@@ -11,7 +11,6 @@
 
       keybind = [
         "performable:ctrl+c=copy_to_clipboard:mixed"
-        "ctrl+v=paste_from_clipboard"
         "ctrl+shift+h=unbind"
         "ctrl+shift+j=unbind"
         "ctrl+shift+k=unbind"
