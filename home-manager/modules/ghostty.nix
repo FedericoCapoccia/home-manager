@@ -9,6 +9,11 @@
       font-family = "CaskaydiaCove Nerd Font";
       font-size = 14;
 
+      keybind = [
+        "performable:ctrl+c=copy_to_clipboard:mixed"
+        "ctrl+v=paste_from_clipboard"
+      ];
+
       # freetype-load-flags = "no-hinting,no-force-autohint,no-monochrome";
       freetype-load-flags = "hinting,no-autohint,light,no-force-autohint,no-monochrome";
       alpha-blending = "linear-corrected";
