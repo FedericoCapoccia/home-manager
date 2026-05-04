@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 {
   programs.fish = {
     enable = true;
@@ -72,5 +72,6 @@
 
   home.sessionPath = [
     "$CARGO_HOME/bin"
+    "${config.xdg.dataHome}/zvm/bin"
   ];
 }
