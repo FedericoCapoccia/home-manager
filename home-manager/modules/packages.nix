@@ -23,7 +23,6 @@
     gradle
     rustup
     go
-    zls
 
     bat
     btop
