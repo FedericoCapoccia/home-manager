@@ -23,7 +23,6 @@
     gradle
     rustup
     go
-    zig
     zls
 
     bat
