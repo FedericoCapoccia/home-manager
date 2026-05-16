@@ -17,6 +17,13 @@
       controlPath = "~/.ssh/master-%r@%n:%p";
       controlPersist = "no";
     };
+
+    matchBlocks."codeberg.org" = {
+      hostname = "codeberg.org";
+      user = "git";
+      identityFile = "~/.ssh/git_ed25519";
+      identitiesOnly = true;
+    };
   };
 
   home.sessionVariables = {
