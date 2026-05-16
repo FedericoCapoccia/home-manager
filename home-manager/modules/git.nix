@@ -7,7 +7,7 @@
     settings = {
       user = {
         name = "Federico Capoccia";
-        email = "166076838+FedericoCapoccia@users.noreply.github.com";
+        email = "accounts@federicocapoccia.com";
       };
       init.defaultBranch = "main";
       core.autocrlf = "input";
