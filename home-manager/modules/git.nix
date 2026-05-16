@@ -15,7 +15,7 @@
 
     };
     signing = {
-      key = "${config.home.homeDirectory}/.ssh/github.pub";
+      key = "${config.home.homeDirectory}/.ssh/git_ed25519";
       format = "ssh";
       signByDefault = true;
     };
