@@ -7,7 +7,7 @@
     settings = {
       user = {
         name = "Federico Capoccia";
-        email = "accounts@federicocapoccia.com";
+        email = "rich.book7416@fastmail.com";
       };
       init.defaultBranch = "main";
       core.autocrlf = "input";
