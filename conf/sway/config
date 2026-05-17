@@ -102,7 +102,7 @@ for_window [title = "Administrator privileges required"] floating enable
 for_window [title = "About Mozilla Firefox"] floating enable
 for_window [window_role = "About"] floating enable
 for_window [app_id = "firefox" title = "Library"] floating enable
-for_window [title = "vk-game"] floating enable
+for_window [title = "VkGame"] floating enable
 
 #Useful config for Steam from gentoo wiki
 for_window [class = "steam" title="Friends List"] floating enable
