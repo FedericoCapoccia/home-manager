@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, lib, ... }:
 let
   opencodeWrapper = pkgs.writeShellScriptBin "opencode" ''
     exec "${config.home.homeDirectory}/.opencode/bin/opencode" "$@"
@@ -32,5 +32,14 @@ in
       };
     };
     web.enable = true;
+  };
+
+  systemd.user.services.opencode-web = {
+    Unit = {
+      After = [ "graphical-session.target" ];
+      PartOf = [ "graphical-session.target" ];
+    };
+
+    Install.WantedBy = lib.mkForce [ "graphical-session.target" ];
   };
 }
