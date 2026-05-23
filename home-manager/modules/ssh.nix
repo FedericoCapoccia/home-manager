@@ -3,11 +3,11 @@
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
-  };
 
-  settings."codeberg.org" = {
-    IdentityFile = "~/.ssh/git_ed25519";
-    IdentitiesOnly = true;
+    settings."codeberg.org" = {
+      IdentityFile = "~/.ssh/git_ed25519";
+      IdentitiesOnly = true;
+    };
   };
 
   home.sessionVariables = {
