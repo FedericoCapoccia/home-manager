@@ -14,8 +14,17 @@ sudo pacman -S --needed \
   gnome-keyring polkit-gnome qt6ct \
   kitty helium-browser-bin \
   noctalia-shell \
+  noctalia-greeter \
   flatpak
 ```
+
+Add to `/etc/greetd/config.toml` under `[default_session]`
+
+```
+command = "/usr/bin/noctalia-greeter-session"
+```
+
+Add to `/var/lib/noctalia-greeter/greeter.toml` for greeter output configuration
 
 Install Flatpak apps used by the Sway autostart:
 
@@ -48,6 +57,7 @@ These stay system-managed because HM modules use `package = null`, the composito
 - `qt6ct`: Qt platform theme used by HM Qt settings.
 - `helium-browser-bin`: default browser in `conf/sway/config`.
 - `noctalia-shell`: Sway autostart and keybindings call `qs -c noctalia-shell`; this pulls `noctalia-qs` and `brightnessctl` on CachyOS.
+- `noctalia-greeter`: Greetd wrapper for starting Sway UWSM.
 - `grim`, `slurp`: pulled by `xdg-desktop-portal-wlr` on CachyOS and used by the screenshot keybinding.
 - `flatpak`: starts Easy Effects from Flatpak.
 

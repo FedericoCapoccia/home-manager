@@ -15,9 +15,9 @@
           source /etc/profile.d/nix-daemon.fish
       end
 
-      if test (tty) = /dev/tty1; and not set -q DISPLAY; and not set -q WAYLAND_DISPLAY
-          exec uwsm start -- sway
-      end
+      # if test (tty) = /dev/tty1; and not set -q DISPLAY; and not set -q WAYLAND_DISPLAY
+      #     exec uwsm start -- sway
+      # end
     '';
 
     interactiveShellInit = ''
