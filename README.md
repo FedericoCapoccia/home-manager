@@ -24,7 +24,14 @@ Add to `/etc/greetd/config.toml` under `[default_session]`
 command = "/usr/bin/noctalia-greeter-session"
 ```
 
-Add to `/var/lib/noctalia-greeter/greeter.toml` for greeter output configuration
+Edit `/var/lib/noctalia-greeter/greeter.toml` for greeter output configuration
+
+Configure keyring unlock with greetd `/etc/pam.d/greetd`
+
+```
+auth       optional     pam_gnome_keyring.so
+session    optional     pam_gnome_keyring.so auto_start
+```
 
 Install Flatpak apps used by the Sway autostart:
 
