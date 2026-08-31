@@ -12,7 +12,7 @@
       init.defaultBranch = "main";
       core.autocrlf = "input";
       push.autoSetupRemote = true;
-
+      http.version = "HTTP/1.1";
     };
     signing = {
       key = "${config.home.homeDirectory}/.ssh/git_ed25519.pub";
