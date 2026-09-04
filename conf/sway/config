@@ -28,8 +28,8 @@ exec swaymsg focus output DP-2
 
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
-exec qs -c noctalia-shell
-exec swayidle -w before-sleep 'qs -c noctalia-shell ipc call lockScreen lock'
+exec noctalia
+exec swayidle -w before-sleep 'noctalia msg session lock'
 
 exec flatpak run com.github.wwmm.easyeffects --gapplication-service
 
@@ -123,7 +123,7 @@ for_window [app_id = "org.pulseaudio.pavucontrol"] floating enable
 ##################################
 # Keybinds
 ##################################
-set $ipc qs -c noctalia-shell ipc call
+set $ipc noctalia msg
 bindswitch --locked lid:on exec systemctl suspend
 
 bindsym {
@@ -134,12 +134,11 @@ bindsym {
     $mod+t exec $term
     $mod+b exec $browser
     $mod+q kill
-    $mod+space exec $ipc launcher toggle
-    $mod+period exec $ipc launcher emoji
-    $mod+c exec $ipc launcher clipboard
-    $mod+s exec $ipc launcher command
-    $mod+i exec $ipc settings toggle
-    $mod+tab exec $ipc bar toggle
+    $mod+space exec $ipc panel-toggle launcher
+    $mod+period exec $ipc panel-toggle emo
+    $mod+c exec $ipc panel-toggle clipboard
+    $mod+i exec $ipc settings-toggle
+    $mod+tab exec $ipc bar-toggle
     $mod+p exec grim -g "$(slurp)" - | tee "$(xdg-user-dir PICTURES)/$(date +%Y-%m-%d_%H-%M-%S).png" | wl-copy
 
 #---Layout---#
@@ -184,14 +183,14 @@ bindsym {
     $mod+Shift+0 exec "swaysome move 0"
 
 #---Media--#
-    --locked XF86AudioRaiseVolume exec $ipc volume increase
-    --locked XF86AudioLowerVolume exec $ipc volume decrease
-    --locked XF86AudioMute exec $ipc volume muteOutput
-    --locked XF86AudioPlay exec $ipc media playPause
+    --locked XF86AudioRaiseVolume exec $ipc volume-up
+    --locked XF86AudioLowerVolume exec $ipc volume-down
+    --locked XF86AudioMute exec $ipc volume-mute
+    --locked XF86AudioPlay exec $ipc media toggle
     --locked XF86AudioNext exec $ipc media next
     --locked XF86AudioPrev exec $ipc media previous
-    --locked XF86MonBrightnessUp exec $ipc brightness increase
-    --locked XF86MonBrightnessDown exec $ipc brightness decrease
+    --locked XF86MonBrightnessUp exec $ipc brightness-up
+    --locked XF86MonBrightnessDown exec $ipc brightness-down
 }
 
 mode "resize" {
