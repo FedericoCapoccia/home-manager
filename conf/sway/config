@@ -135,7 +135,7 @@ bindsym {
     $mod+b exec $browser
     $mod+q kill
     $mod+space exec $ipc panel-toggle launcher
-    $mod+period exec $ipc panel-toggle emo
+    $mod+period exec $ipc panel-toggle launcher /emo
     $mod+c exec $ipc panel-toggle clipboard
     $mod+i exec $ipc settings-toggle
     $mod+tab exec $ipc bar-toggle

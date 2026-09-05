@@ -13,6 +13,7 @@
     ./modules/packages.nix
     ./modules/opencode.nix
     ./modules/fonts.nix
+    ./modules/noctalia.nix
     ./modules/sway.nix
     ./modules/theme.nix
     ./modules/kitty.nix
