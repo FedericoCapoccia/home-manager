@@ -68,6 +68,7 @@
           "volume"
           "brightness"
           "battery"
+          "keyboard_layout"
           "bluetooth"
           "tray"
           "control-center"
