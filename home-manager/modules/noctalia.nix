@@ -48,6 +48,11 @@
         directory = "${config.home.homeDirectory}/media/pictures/wallpapers";
       };
 
+      lockscreen = {
+        enabled = true;
+        blurred_desktop = false;
+      };
+
       bar.default = {
         padding = 12;
         margin_ends = 4;
