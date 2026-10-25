@@ -23,6 +23,7 @@
     gradle
     rustup
     go
+    conan
 
     bat
     btop
