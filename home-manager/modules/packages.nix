@@ -20,7 +20,6 @@
     oxfmt
     oxlint
     premake5
-    luarocks
 
     gradle
     rustup
