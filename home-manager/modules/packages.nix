@@ -19,6 +19,7 @@
     tailwindcss-language-server
     oxfmt
     oxlint
+    premake5
 
     gradle
     rustup
