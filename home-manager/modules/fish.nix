@@ -72,6 +72,7 @@
 
   home.sessionPath = [
     "$CARGO_HOME/bin"
+    "${config.xdg.home}/.local/bin"
     "${config.xdg.dataHome}/go/bin"
     "${config.xdg.dataHome}/zvm/bin"
   ];
