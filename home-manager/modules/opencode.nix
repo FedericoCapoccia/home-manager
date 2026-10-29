@@ -15,33 +15,33 @@ in
     package = opencodeWrapper;
 
     settings = {
-      model = "ollama/metalspork/qwen3.8-ud:Q2_K_XL";
+      # model = "ollama/metalspork/qwen3.8-ud:Q2_K_XL";
       provider = {
-        github-copilot = {
-          whitelist = [
-            "gpt-5-mini"
-            "gpt-5.4-mini"
-          ];
-        };
-        openai = {
-          whitelist = [
-            "gpt-5.4"
-            "gpt-5.4-mini"
-            "gpt-5.5"
-          ];
-        };
-        ollama = {
-          npm = "@ai-sdk/openai-compatible";
-          name = "Ollama";
-          options = {
-            baseURL = "http://localhost:11434/v1";
-          };
-          models = {
-            "metalspork/qwen3.8-ud:Q2_K_XL" = {
-              name = "Qwen 3.8 UD Q2_K_XL";
-            };
-          };
-        };
+        # github-copilot = {
+        #   whitelist = [
+        #     "gpt-5-mini"
+        #     "gpt-5.4-mini"
+        #   ];
+        # };
+        # openai = {
+        #   whitelist = [
+        #     "gpt-5.4"
+        #     "gpt-5.4-mini"
+        #     "gpt-5.5"
+        #   ];
+        # };
+        # ollama = {
+        #   npm = "@ai-sdk/openai-compatible";
+        #   name = "Ollama";
+        #   options = {
+        #     baseURL = "http://localhost:11434/v1";
+        #   };
+        #   models = {
+        #     "metalspork/qwen3.8-ud:Q2_K_XL" = {
+        #       name = "Qwen 3.8 UD Q2_K_XL";
+        #     };
+        #   };
+        # };
       };
       mcp = { };
       server = {
