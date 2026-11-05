@@ -28,6 +28,8 @@
     GRADLE_USER_HOME = "${config.xdg.dataHome}/gradle";
     LESSHISTFILE = "${config.xdg.stateHome}/less/history";
     TS3_CONFIG_DIR = "${config.xdg.configHome}/ts3client";
+    ZVM_PATH = "${config.xdg.dataHome}/zvm";
+    CONAN_HOME = "${config.xdg.dataHome}/conan";
     # _JAVA_OPTIONS = "-Djava.util.prefs.userRoot=${config.xdg.configHome}/java";
   };
 }
