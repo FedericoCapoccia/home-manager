@@ -1,18 +1,8 @@
-{
-  pkgs,
-  config,
-  lib,
-  ...
-}:
-let
-  opencodeWrapper = pkgs.writeShellScriptBin "opencode" ''
-    exec "${config.home.homeDirectory}/.opencode/bin/opencode" "$@"
-  '';
-in
+{ pkgs, ... }:
 {
   programs.opencode = {
     enable = true;
-    package = opencodeWrapper;
+    package = pkgs.opencode;
 
     settings = {
       # model = "ollama/metalspork/qwen3.8-ud:Q2_K_XL";
@@ -43,20 +33,26 @@ in
         #   };
         # };
       };
-      mcp = { };
-      server = {
-        port = 42069;
-      };
+      # mcp = { };
+      # server = {
+      #   port = 42069;
+      # };
     };
-    web.enable = true;
+    # web.enable = true;
+    context = ''
+      Follow existing project conventions.
+      Prefer simple and maintainable implementations.
+      Always check latest docs when questioned about libraries functionality
+      Avoid unnecessary dependencies.
+    '';
   };
 
-  systemd.user.services.opencode-web = {
-    Unit = {
-      After = [ "graphical-session.target" ];
-      PartOf = [ "graphical-session.target" ];
-    };
-
-    Install.WantedBy = lib.mkForce [ "graphical-session.target" ];
-  };
+  # systemd.user.services.opencode-web = {
+  #   Unit = {
+  #     After = [ "graphical-session.target" ];
+  #     PartOf = [ "graphical-session.target" ];
+  #   };
+  #
+  #   Install.WantedBy = lib.mkForce [ "graphical-session.target" ];
+  # };
 }
