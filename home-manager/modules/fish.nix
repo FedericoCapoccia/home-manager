@@ -59,7 +59,7 @@
 
     functions.gitff = ''
       git add --all
-      git commit -m "I don't really feel like writing a commit"
+      git commit -m "commit"
       git push
     '';
 
